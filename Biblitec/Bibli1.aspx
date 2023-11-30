@@ -79,7 +79,7 @@
             <asp:Label ID="lblId" runat="server" Text="ID:"></asp:Label>
             <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
             <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Salvar Livro" OnClick="btnSubmit_Click" />
+            <asp:Button ID="btnSubmit" runat="server" Text=" Salvar Livro" OnClick="btnSubmit_Click" />
             <asp:Button ID="btnUpdate" runat="server" Text="Atualizar Livro" OnClick="btnUpdate_Click" />
             <asp:Button ID="btnDelete" runat="server" Text="Excluir Livro" OnClick="btnDelete_Click" />
         </div>

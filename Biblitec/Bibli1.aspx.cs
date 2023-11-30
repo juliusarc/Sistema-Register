@@ -11,7 +11,7 @@ namespace Biblitec
 {
     public partial class Bibli1 : Page
     {
-        // Substitua a string de conexão com os detalhes do seu banco de dados MySQL
+        // Ligação com o banco de dados
         string connectionString = "server=localhost;uid=root;pwd=ghoull18;database=Biblib";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace Biblitec
                 CarregarDados();
             }
         }
-
+         //parte dos botões
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             SalvarLivro();
@@ -36,7 +36,7 @@ namespace Biblitec
         {
             ExcluirLivro();
         }
-
+        // parte chata, aqi fica onde carrega as coisas...  futuros selects
         private void CarregarDados()
         {
             try
@@ -49,8 +49,8 @@ namespace Biblitec
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // Aqui você pode carregar os dados em um controle, como um GridView
-                            // Exemplo: gridViewLivros.DataSource = reader; gridViewLivros.DataBind();
+                            //  carregar os dados em um controle, como um GridView
+                            // gridViewLivros.DataSource = reader; gridViewLivros.DataBind();
                         }
                     }
                 }
@@ -61,6 +61,7 @@ namespace Biblitec
             }
         }
 
+        // teoria da parte do CRUD
         private void SalvarLivro()
         {
             try
