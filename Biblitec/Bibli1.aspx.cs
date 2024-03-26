@@ -36,6 +36,14 @@ namespace Biblitec
         {
             ExcluirLivro();
         }
+
+
+        protected void btnViewBooks_Click(object sender, EventArgs e)
+        {
+            ExibirLivros();
+        }
+
+
         // parte chata, aqi fica onde carrega as coisas...  futuros selects
         private void CarregarDados()
         {
@@ -113,6 +121,9 @@ namespace Biblitec
             }
         }
 
+        
+
+
         private void ExcluirLivro()
         {
             try
@@ -135,5 +146,39 @@ namespace Biblitec
                 lblResult.Text = $"Erro ao excluir livro: {ex.Message}";
             }
         }
+
+        private void ExibirLivros()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM Livros";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            string booksInfo = "Livros Disponíveis:<br/>";
+                            while (reader.Read())
+                            {
+                                booksInfo += $"ID: {reader["Id"]}, Título: {reader["Titulo"]}, Autor: {reader["Autor"]}, Ano de Lançamento: {reader["AnoLancamento"]}<br/><br/>";
+                            }
+                            lblBooks.Text = booksInfo;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblResult.Text = $"Erro ao exibir livros: {ex.Message}";
+            }
+        }
+
+
+
+
+
+
     }
 }
