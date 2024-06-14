@@ -118,16 +118,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bibli1.aspx" />
+    <Content Include="RegisterT.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bibli1.aspx.cs">
-      <DependentUpon>Bibli1.aspx</DependentUpon>
+    <Compile Include="RegisterT.aspx.cs">
+      <DependentUpon>RegisterT.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bibli1.aspx.designer.cs">
-      <DependentUpon>Bibli1.aspx</DependentUpon>
+    <Compile Include="RegisterT.aspx.designer.cs">
+      <DependentUpon>RegisterT.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
